@@ -46,7 +46,10 @@ spec:
     }
    stage('Test') {
       steps {
-        mvn test
+	container('maven') {
+          sh 'mvn test'
+        }
+        
       }
     }
 }
