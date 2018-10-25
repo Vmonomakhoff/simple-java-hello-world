@@ -43,10 +43,12 @@ spec:
           sh 'mvn -B -DskipTests clean package'
         }
       }
-    stage('Test') {
-      mvn test
+    }
+   stage('Test') {
+      steps {
+        mvn test
       }
     }
-
 }
+
 }
