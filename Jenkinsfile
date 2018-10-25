@@ -55,7 +55,7 @@ spec:
    stage('Docker') {
       steps {
 	container('docker') {
-          docker build -t my-app:$BUILD_NUMBER .
+          sh 'docker build -t my-app:$BUILD_NUMBER .'
         }
         
       }
@@ -63,7 +63,7 @@ spec:
    stage('DockerLaunch') {
       steps {
 	container('docker') {
-          docker run my-app:$BUILD_NUMBER
+          sh 'docker run my-app:$BUILD_NUMBER'
         }
         
       }
